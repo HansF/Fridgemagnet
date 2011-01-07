@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-<? 
+<?php
 // dbase settings
 $dbhost ="localhost"; 
 $dbname ="shop"; 
@@ -7,24 +6,9 @@ $dbuname ="root";
 $dbpasswd =""; 
 
 // application settings 
-$adminuser = "01000000";
+$deletecode = 	"100";
+$admincode = 	"9997990941687";
+$SomeSecret = "r]JbwReTH1pCzW0n9c(j2Wtjx9cM(SfvKAt-Vy}-";
 
 
-
-
-=======
-<? 
-// dbase settings
-$dbhost ="localhost"; 
-$dbname ="shop"; 
-$dbuname ="root"; 
-$dbpasswd =""; 
-
-// application settings 
-$adminuser = "01000000";
-
-
-
-
->>>>>>> 8557a45564ddbc39794704a904c6e1e233f08f3f
 ?>
