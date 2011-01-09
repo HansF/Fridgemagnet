@@ -1,4 +1,4 @@
-<?
+<?php
 /*
 
 	geld in kas : 
