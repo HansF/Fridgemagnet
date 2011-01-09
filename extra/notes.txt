@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 deposit : 02000000XXXX
 
 deposit menu  :		0100000001
@@ -6,13 +5,4 @@ withdraw menu : 	0100000002
 balance 			0100000003
 
 
-=======
-deposit : 02000000XXXX
-
-deposit menu  :		0100000001
-withdraw menu : 	0100000002
-balance 			0100000003
-
-
->>>>>>> 8557a45564ddbc39794704a904c6e1e233f08f3f
 users = 42RANDOM
