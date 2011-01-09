@@ -23,3 +23,10 @@ To create a barcode-reader backed system to pay for drinks out of the fridge and
 ##We accept patches
 
 Please feel free to help and to patch this software, need all help I can get.
+
+##Installation
+
+1) unzip to webdir
+2) import extra/dbschema.sql in your database
+3) edit inc/settings.php
+4) Set the right ean-codes and users in the db
