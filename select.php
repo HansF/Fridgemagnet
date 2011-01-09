@@ -13,6 +13,7 @@ if ( ($input['type']=="command")){
 	
 	if ($input['command']=="deposit"){
 			header("Location: ./deposit.php");
+	}
 	if ($input['command']=="empty"){
 			header("Location: ./empty.php");
 	}
