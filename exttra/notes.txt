@@ -1,8 +1,0 @@
-deposit : 02000000XXXX
-
-deposit menu  :		0100000001
-withdraw menu : 	0100000002
-balance 			0100000003
-
-
-users = 42RANDOM
