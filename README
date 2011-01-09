@@ -1,3 +1,17 @@
 FridgeMagnet
 
 Licensed gpl V3 http://www.gnu.org/licenses/gpl.html
+
+Goal of this software
+
+To create a barcode-reader backed system to pay for drinks out 
+of the fridge and to keep tab of the credit of the ppl using the
+system. The goal is to make it as easy as possible for all actors. 
+
+- the member who gets the drink and needs to pay for it
+- the person financially responsible to follow up on income
+
+We accept patches
+
+Please feel free to help and to patch this software, need all help
+I can get.
