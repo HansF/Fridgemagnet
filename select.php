@@ -38,59 +38,6 @@ function GoToCheckOutOrAccount($userid){
 	header("Location: ./checkout.php");
 }
 
-/*
-function inputswitch: 
-in : barcode 
-check input regexp and is existing number. 
-*/
-function inputswitch($input){
-	// check input against regexp
-	preg_match('/\d{4}/', $input, $matches);
-	$input = $matches[0];
-	// check if its a product 
-		$sql = "SELECT * FROM `products` WHERE ean='".$input."' LIMIT 0, 1 ";
-		$result = mysql_query($sql);
-		if (mysql_num_rows ($result) == 1){
-					$output['ean']=$input; 
-					$output['type']="product";
-					return $output;
-					}
-					
-	// check it its a user
-		$sql = "SELECT * FROM `users` WHERE ean='".$input."' LIMIT 0, 1 ";
-		$result = mysql_query($sql);
-		if (mysql_num_rows ($result) == 1){
-					$row = mysql_fetch_assoc($result);
-					$output['id']=$row['id']; 
-					$output['type']="user";
-					return $output;
-					}
-
-	// check if its a command
-		$sql = "SELECT action FROM `actioncodes` WHERE ean='".$input."' LIMIT 0, 1 ";
-		$result = mysql_query($sql);
-		if (mysql_num_rows ($result) == 1){
-					$row = mysql_fetch_assoc($result);
-					$output['command']=$row['action']; 
-					$output['type']="command";
-					return $output;
-					}
-
-	// none of the above, how scary!
-					$output['command']="error"; 
-					$output['type']="command";
-					killcart(); //no sessions for you, nasty kiddo!
-					return $output;
-}
-
-
-// kill the session on delete code 
-function killcart(){
-	session_destroy();
-	unset ($_POST['ean']);
-	//echo "Car should be empty!"; 
-	return true;
-	}
 ?>
 <form method=post action='select.php'>
 <input type = "text" name="ean"  class="auto-focus" >
