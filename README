@@ -1,14 +1,44 @@
-####FridgeMagnet
+              Hackerspace Brussels/Whitespace Ghent
+	                  presents
 
-Licensed gpl V3 http://www.gnu.org/licenses/gpl.html
+    ______    _     _            __  __                        _   
+   |  ____|  (_)   | |          |  \/  |                      | |  
+   | |__ _ __ _  __| | __ _  ___| \  / | __ _  __ _ _ __   ___| |_ 
+   |  __| '__| |/ _` |/ _` |/ _ \ |\/| |/ _` |/ _` | '_ \ / _ \ __|
+   | |  | |  | | (_| | (_| |  __/ |  | | (_| | (_| | | | |  __/ |_ 
+   |_|  |_|  |_|\__,_|\__, |\___|_|  |_|\__,_|\__, |_| |_|\___|\__|
+                       __/ |                   __/ |               
+                      |___/                   |___/         
+		      
 
-##Goal of this software
+	Licensed gpl V3 http://www.gnu.org/licenses/gpl.html
+	Homepage: http://0x20.be/FridgeMagnet
 
-To create a barcode-reader backed system to pay for drinks out of the fridge and to keep tab of the credit of the ppl using the system. The goal is to make it as easy as possible for all actors. 
+	Goal of this software
+	---------------------
 
-- the member who gets the drink and needs to pay for it
-- the person financially responsible to follow up on income
+	To create a barcode-reader backed system to pay for drinks out 
+	of the fridge and to keep tab of the credit of the people using
+	the	system. 
+	
+	The goal is to make it as easy as possible for all actors. 
 
-##We accept patches
+	- the member who gets the drink and needs to pay for it
+	- the person financially responsible to follow up on income
 
-Please feel free to help and to patch this software, need all help I can get.
+	We accept patches
+	-----------------
+
+	Please feel free to help and to patch this software, 
+	I welcome all help I can get.
+
+	Installation
+	------------
+
+	1) unzip to webdir
+	2) import extra/dbschema.sql in your database
+	3) edit inc/settings.php
+	4) Set the right ean-codes and users in the db
+	5) Fill fridge with drinks 
+	6) Sell drinks to members 
+	7) Profit!

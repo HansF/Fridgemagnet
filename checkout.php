@@ -31,7 +31,7 @@ if (isset($_SESSION['basket'])){
 	<input type = "text" name="ean"  class="auto-focus" />
 	<input type = "hidden" name="formnr" value="<?php echo $formnr ?>" />
 </form>
-
+<embed src="./img/bell.wav" loop="false" autoplay="true" width="145" width="2" height="0"></embed>
 <?php
 require ('./inc/footer.php');
 
