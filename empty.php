@@ -22,18 +22,25 @@ if ($_POST['formnr']==4) header("Location: ./select.php");
 */
 require ('./inc/settings.php');
 require ('./inc/connect.php');
-require ('./inc/header.php');
 
 if (isset($_POST['ean'])) $input = inputswitch($_POST['ean']);
+if ($input['command']=="delete"){
+	session_destroy();
+	header("Location: ./select.php");
+}
 
-if (isset($_POST['ean'])&&($_POST['ean'])!=) die('naughty :-)');
-if ($_POST['ean']==$deletecode){
-									session_destroy();
-									header("Location: ./select.php");
-									}
+if ($_POST['formnr']==3){
+	session_destroy();
+	header("Location: ./select.php");
+								}
+								
+require ('./inc/header.php');
+
 
 if (!isset($_POST['formnr'])){
 								echo "<h2>Money in the bank</h2>";
+								
+//print_r($_POST); 
 								$formnr = 1;
 								$sql = "SELECT time FROM `withdraw` ORDER by time DESC LIMIT 0,1";								
 								$result = mysql_query($sql);
@@ -42,28 +49,22 @@ if (!isset($_POST['formnr'])){
 								$result = mysql_query($sql);
 								$cash = mysql_result($result, 0);
 								echo "<p>Money in the bank : ". $cash ."</p>";
+								echo "<p>To Empty the cash, swipe the empty-code again.</p>";
+								echo "<p>To go home, scan the reset code.</p>";
 								
 								
 								}
 if ($_POST['formnr']==1){
-								echo "<h2>Scan the code of the right amount</h2>";
-								$_SESSION['donor']=$_POST['ean'];
-								$_SESSION['amount']=EanToCash($_POST['ean']);
+								if ($input['command']!="empty") die("Wtf!?");
+								echo "<h2>The amount has been reset.</h2>";
+								$sql = "INSERT INTO `shop`.`withdraw` (`id`, `time`) VALUES (NULL, CURRENT_TIMESTAMP);";					
+								$result = mysql_query($sql);
 								$formnr = 2;
 								}
 if ($_POST['formnr']==2){
-								echo "<h2>Swipe card of validator</h2>";
-								$_SESSION['amount']=EanToCash($_POST['ean']);
+								echo "<h2>Amount in cashbox reset</h2>";
+								echo "<p> you can hit the reset code now</p>";
 								$formnr = 3;
-								}
-if ($_POST['formnr']==3){
-								echo "<h2>confirmscreen</h2>";
-								$_SESSION['validator']=$_POST['ean'];
-								insertDepositToDb($_SESSION['donor'],$_SESSION['amount'],$_SESSION['validator']);
-								//print_r($_SESSION);
-								echo "<p>Account increased with ".$_SESSION['amount'].".<br/>Hit the reset code to go to the home screen.</p>";
-								session_destroy();
-								$formnr = 4;
 								}
 ?>
 <form method=post action='empty.php'>
