@@ -1,5 +1,5 @@
 <?php 
-function GiveQuote(){
+
 	$dqs[]="Stay busy, get plenty of exercise, and don't drink too much.&#160; Then again, don't drink too little.&#160; ~Herman &#34;Jackrabbit&#34; Smith-Johannsen";
 	$dqs[]="Always do sober what you said you'd do drunk.&#160; That will teach you to keep your mouth shut.&#160; ~Ernest Hemingway";
 	$dqs[]="A hangover is the wrath of grapes.&#160; ~Author Unknown";
@@ -244,10 +244,10 @@ function GiveQuote(){
 	$dqs[]="Ale sellers should not be tale tellers. -- Old Scottish proverb";
 	$dqs[]="Life alas, is very drear. Up with the glass, down with the beer! -- Louis Untermeyer";
 	$dqs[]="Cerevisia malorum. divina medicina (A little bit of beer is divine medicine.) -- Paracelsus - 16th century physician";
+function GiveQuote(){
+	global $dqs;
 	$i = rand ( 0 , count($dqs) );
 	return $dqs[$i];
 }
-
-
 
 ?>
