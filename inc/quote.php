@@ -97,7 +97,7 @@ function GiveQuote(){
 	$dqs[] = "...Actually, I'm a drinker with writing problems. -- Brendan Behan";
 	$dqs[] = "When we drink, we get drunk. When we get drunk, we fall asleep. When we fall asleep, we commit no sin. When we commit no sin, we go to heaven. Sooooo, let's all get drunk and go to heaven! -- Brian O'Rourke";
 	$dqs[] = "You sit back in the darkness, nursing your beer, breathing in that ineffable aroma of the old-time saloon: dark wood, spilled beer, good cigars, and ancient whiskey - the sacred incense of the drinking man. -- Bruce Aidells";
-	$dqs[] = "People who drink light "beer" don't like the taste of beer; they just like to pee a lot. -- Capital Brewery, Middleton, WI";
+	$dqs[] = "People who drink light 'beer' don't like the taste of beer; they just like to pee a lot. -- Capital Brewery, Middleton, WI";
 	$dqs[] = "Time is never wasted when you're wasted all the time. -- Catherine Zandonella";
 	$dqs[] = "SAM: What's new, Normie? NORM: Terrorists, Sam. They've taken over my stomach and they're demanding beer. -- Cheers";
 	$dqs[] = "SAM: What'd you like, Normie? NORM: A reason to live. Give me another beer. -- Cheers";
@@ -133,7 +133,7 @@ function GiveQuote(){
 	$dqs[] = "Quaintest thoughts, queerest fancies come to life and fade away. What care I how time advances; I am drinking ale today. -- Edgar Allan Poe";
 	$dqs[] = "I decided to stop drinking with creeps. I decided to drink only with friends. I've lost 30 pounds. -- Ernest Hemingway";
 	$dqs[] = "Always do sober what you said you'd do drunk. That will teach you to keep your mouth shut. -- Ernest Hemingway";
-	$dqs[] = "An intelligent man is sometimes forced to be drunk to spend time with his fools. -- Ernest Hemmingway, "For Whom the Bell Tolls"";
+	$dqs[] = "An intelligent man is sometimes forced to be drunk to spend time with his fools. -- Ernest Hemmingway, 'For Whom the Bell Tolls'";
 	$dqs[] = "I'll have another beer. I'm not driving. -- Father Theodore, Trappist Monk";
 	$dqs[] = "You can't have a Real Country unless you have a BEER and an airline - it helps if you have some kind of a football team, or some nuclear weapons, but at the very least you need a BEER. -- Frank Zappa";
 	$dqs[] = "Many battles have been fought and won by soldiers nourished on beer. -- Frekerick William";

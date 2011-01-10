@@ -2,18 +2,12 @@
 -- version 3.2.4
 -- http://www.phpmyadmin.net
 --
--- Machine: localhost
--- Genereertijd: 07 Jan 2011 om 17:47
--- Serverversie: 5.1.41
--- PHP-Versie: 5.3.1
+-- Host: localhost
+-- Generation Time: Jan 10, 2011 at 09:52 
+-- Server version: 5.1.41
+-- PHP Version: 5.3.1
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `shop`
@@ -22,7 +16,7 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `actioncodes`
+-- Table structure for table `actioncodes`
 --
 
 CREATE TABLE IF NOT EXISTS `actioncodes` (
@@ -30,20 +24,21 @@ CREATE TABLE IF NOT EXISTS `actioncodes` (
   `action` varchar(250) NOT NULL,
   `ean` varchar(13) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
--- Gegevens worden uitgevoerd voor tabel `actioncodes`
+-- Dumping data for table `actioncodes`
 --
 
 INSERT INTO `actioncodes` (`id`, `action`, `ean`) VALUES
 (1, 'delete', '1000'),
-(2, 'deposit', '1001');
+(2, 'deposit', '1001'),
+(3, 'empty', '1002');
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `deposit`
+-- Table structure for table `deposit`
 --
 
 CREATE TABLE IF NOT EXISTS `deposit` (
@@ -52,10 +47,10 @@ CREATE TABLE IF NOT EXISTS `deposit` (
   `checked_by` varchar(40) NOT NULL,
   `transaction_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
 
 --
--- Gegevens worden uitgevoerd voor tabel `deposit`
+-- Dumping data for table `deposit`
 --
 
 INSERT INTO `deposit` (`id`, `deposit_by`, `checked_by`, `transaction_id`) VALUES
@@ -73,12 +68,13 @@ INSERT INTO `deposit` (`id`, `deposit_by`, `checked_by`, `transaction_id`) VALUE
 (12, '1', '2', 33),
 (13, '1', '2', 34),
 (14, '1', '2', 37),
-(15, '1', '2', 39);
+(15, '1', '2', 39),
+(16, '1', '2', 40);
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `products`
+-- Table structure for table `products`
 --
 
 CREATE TABLE IF NOT EXISTS `products` (
@@ -90,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `products` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
--- Gegevens worden uitgevoerd voor tabel `products`
+-- Dumping data for table `products`
 --
 
 INSERT INTO `products` (`id`, `name`, `price`, `ean`) VALUES
@@ -102,7 +98,7 @@ INSERT INTO `products` (`id`, `name`, `price`, `ean`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `transactions`
+-- Table structure for table `transactions`
 --
 
 CREATE TABLE IF NOT EXISTS `transactions` (
@@ -111,10 +107,10 @@ CREATE TABLE IF NOT EXISTS `transactions` (
   `user` int(11) NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=40 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=43 ;
 
 --
--- Gegevens worden uitgevoerd voor tabel `transactions`
+-- Dumping data for table `transactions`
 --
 
 INSERT INTO `transactions` (`id`, `amount`, `user`, `date`) VALUES
@@ -156,12 +152,15 @@ INSERT INTO `transactions` (`id`, `amount`, `user`, `date`) VALUES
 (36, -4, 1, '2011-01-06 21:05:26'),
 (37, 10, 1, '2011-01-06 21:05:46'),
 (38, -3, 1, '2011-01-06 22:00:14'),
-(39, 10, 1, '2011-01-06 22:01:39');
+(39, 10, 1, '2011-01-06 22:01:39'),
+(40, 10, 1, '2011-01-09 14:30:47'),
+(41, -3, 1, '2011-01-09 14:31:15'),
+(42, -4, 1, '2011-01-10 21:45:39');
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
@@ -172,7 +171,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
--- Gegevens worden uitgevoerd voor tabel `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `ean`) VALUES
@@ -182,7 +181,7 @@ INSERT INTO `users` (`id`, `name`, `ean`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `withdraw`
+-- Table structure for table `withdraw`
 --
 
 CREATE TABLE IF NOT EXISTS `withdraw` (
@@ -192,14 +191,10 @@ CREATE TABLE IF NOT EXISTS `withdraw` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
--- Gegevens worden uitgevoerd voor tabel `withdraw`
+-- Dumping data for table `withdraw`
 --
 
 INSERT INTO `withdraw` (`id`, `time`) VALUES
 (1, '2010-01-02 17:34:56'),
 (2, '2011-01-02 17:39:47'),
 (3, '2011-01-02 17:40:03');
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
