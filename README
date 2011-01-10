@@ -11,22 +11,34 @@
                       |___/                   |___/         
 		      
 
-Licensed gpl V3 http://www.gnu.org/licenses/gpl.html
+	Licensed gpl V3 http://www.gnu.org/licenses/gpl.html
+	Homepage: http://0x20.be/FridgeMagnet
 
-##Goal of this software
+	Goal of this software
+	---------------------
 
-To create a barcode-reader backed system to pay for drinks out of the fridge and to keep tab of the credit of the ppl using the system. The goal is to make it as easy as possible for all actors. 
+	To create a barcode-reader backed system to pay for drinks out 
+	of the fridge and to keep tab of the credit of the people using
+	the	system. 
+	
+	The goal is to make it as easy as possible for all actors. 
 
-- the member who gets the drink and needs to pay for it
-- the person financially responsible to follow up on income
+	- the member who gets the drink and needs to pay for it
+	- the person financially responsible to follow up on income
 
-##We accept patches
+	We accept patches
+	-----------------
 
-Please feel free to help and to patch this software, need all help I can get.
+	Please feel free to help and to patch this software, 
+	I welcome all help I can get.
 
-##Installation
+	Installation
+	------------
 
-1) unzip to webdir
-2) import extra/dbschema.sql in your database
-3) edit inc/settings.php
-4) Set the right ean-codes and users in the db
+	1) unzip to webdir
+	2) import extra/dbschema.sql in your database
+	3) edit inc/settings.php
+	4) Set the right ean-codes and users in the db
+	5) Fill fridge with drinks 
+	6) Sell drinks to members 
+	7) Profit!
