@@ -1,6 +1,10 @@
 <?php
 session_start();
 if ($_POST['formnr']==4) header("Location: ./select.php");
+if (($_SESSION['donor']==$_POST['ean'])&&($_POST['formnr']==3)){
+									session_destroy();
+									header("Location: ./select.php");
+									}
 /*
 1) scan ean user 1 
 2) scan amount 
@@ -33,7 +37,8 @@ if ($_POST['formnr']==2){
 								$_SESSION['amount']=EanToCash($_POST['ean']);
 								$formnr = 3;
 								}
-if ($_POST['formnr']==3){
+if (($_POST['formnr']==3)&&($_SESSION['donor']!=$_POST['ean'])){
+
 								echo "<h2>confirmscreen</h2>";
 								$_SESSION['validator']=$_POST['ean'];
 								insertDepositToDb($_SESSION['donor'],$_SESSION['amount'],$_SESSION['validator']);
