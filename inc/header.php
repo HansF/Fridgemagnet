@@ -23,7 +23,8 @@
 <div id="Topbar" class="grid_12 ">
 
 <h1>- Kassa - </h1>
-
+print_R($_SESSION);
+print_R($_POST);
 </div>
 
 </div>
