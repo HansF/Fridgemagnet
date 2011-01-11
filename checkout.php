@@ -32,6 +32,7 @@ if (isset($_SESSION['basket'])){
 	<input type = "hidden" name="formnr" value="<?php echo $formnr ?>" />
 	<input type = "text" name="ean"  class="auto-focus" />
 </form>
+
 <?php
 require ('./inc/footer.php');
 
