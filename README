@@ -33,7 +33,7 @@
 	I welcome all help I can get.
 
 	Installation
-	-------------
+	------------
 
 	1) unzip to webdir
 	2) import extra/dbschema.sql in your database
