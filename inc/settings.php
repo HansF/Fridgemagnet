@@ -4,6 +4,7 @@ $dbhost ="localhost";
 $dbname ="shop"; 
 $dbuname ="root"; 
 $dbpasswd =""; 
+$cashsign = "&euro;";
 
 // application settings 
 $deletecode = 	"1000";

@@ -14,17 +14,27 @@ if ($_POST['ean']==1000){
 									}
 require ('./inc/header.php');
 
+$balance = GetAccountBalanceById($_SESSION['userid']);
 if (isset($_SESSION['basket'])){
 	$total = $_SESSION['total'];
 	$id = $_SESSION['userid'];
-	$sql = "INSERT INTO `shop`.`transactions` (`id`, `amount`, `user`, `date`) VALUES (NULL, '-$total', '$id', CURRENT_TIMESTAMP);";
-	//echo $sql;
-	$result = mysql_query($sql);
-	session_destroy();
-	echo $total." Euros snatched from your account<BR/>";
+//	echo "total $total - balance $balance";
+	if ($total <= $balance){
+		$sql = "INSERT INTO `shop`.`transactions` (`id`, `amount`, `user`, `date`) VALUES (NULL, '-$total', '$id', CURRENT_TIMESTAMP);";
+		//echo $sql;
+		$result = mysql_query($sql);
+		echo $total." Euros snatched from your account<BR/>";
+		}else{
+		echo "<h1>Aborted: E_OutOfMoney</h1><p>Your total was $total $cashsign, BUT you have only $balance $cashsign left</p>"; 
+		}
+	}else{
+	
+	echo "You have $balance $cashsign left";
+	
+	
 	}
-	$balance = GetAccountBalanceById($_SESSION['userid']);
-	echo "Your balance is: ".$balance; 
+session_destroy();
+	
 
 
 ?>

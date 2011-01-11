@@ -1,4 +1,5 @@
 <?php
+session_start();
 if ($_POST['formnr']==4) header("Location: ./select.php");
 /*
 1) scan ean user 1 
@@ -9,6 +10,7 @@ require ('./inc/settings.php');
 require ('./inc/connect.php');
 require ('./inc/header.php');
 
+$action = "deposit.php";
 if (isset($_POST['ean'])&&!isvalidean13($_POST['ean'])) die('naughty :-)');
 if ($_POST['ean']==$deletecode){
 									session_destroy();
@@ -39,9 +41,10 @@ if ($_POST['formnr']==3){
 								echo "<p>Account increased with ".$_SESSION['amount'].".<br/>Hit the reset code to go to the home screen.</p>";
 								session_destroy();
 								$formnr = 4;
+								$action = "select.php";
 								}
 ?>
-<form method=post action='deposit.php'>
+<form method=post action='<?php echo $action ?>'>
 	<input type = "text" name="ean"  class="auto-focus" />
 	<input type = "hidden" name="formnr" value="<?php echo $formnr ?>" />
 </form>
