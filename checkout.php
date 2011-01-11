@@ -1,11 +1,7 @@
 <?php
 session_start();
 if ($_POST['formnr']==4) header("Location: ./select.php");
-/*
-1) scan ean user 1 
-2) scan amount 
-3) confirm with ean user 2
-*/
+
 require ('./inc/settings.php');
 require ('./inc/connect.php');
 if ($_POST['ean']==1000){
