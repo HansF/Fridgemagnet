@@ -1,4 +1,5 @@
 <?php
+session_start();
 if ($_POST['formnr']==4) header("Location: ./select.php");
 /*
 1) scan ean user 1 
@@ -28,10 +29,9 @@ if (isset($_SESSION['basket'])){
 
 ?>
 <form method=post action='select.php'>
-	<input type = "text" name="ean"  class="auto-focus" />
 	<input type = "hidden" name="formnr" value="<?php echo $formnr ?>" />
+	<input type = "text" name="ean"  class="auto-focus" />
 </form>
-<embed src="./img/bell.wav" loop="false" autoplay="true" width="145" width="2" height="0"></embed>
 <?php
 require ('./inc/footer.php');
 

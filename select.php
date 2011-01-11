@@ -1,4 +1,5 @@
 <?php
+session_start();
 require ('./inc/settings.php');
 require ('./inc/connect.php');
 
@@ -8,7 +9,7 @@ $_SESSION['input']=$input;
 //print_r($input);
 
 // let's start with checking if they gave a command and send them ontheir way
-if ( ($input['type']=="command")){
+if ($input['type']=="command"){
 	if ($input['command']=="delete") killcart();
 	
 	if ($input['command']=="deposit"){
@@ -34,6 +35,7 @@ if ($input['type']=="product"){
 
 
 function GoToCheckOutOrAccount($userid){
+//	session_start();
 	$_SESSION['userid']=$userid;
 	header("Location: ./checkout.php");
 }
