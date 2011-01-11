@@ -24,8 +24,8 @@
 
 <h1>- Kassa - </h1>
 <?php
-print_R($_SESSION);
-print_R($_POST);
+// print_R($_SESSION);
+// print_R($_POST);
 ?>
 </div>
 
