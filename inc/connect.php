@@ -11,14 +11,14 @@ $db = mysql_select_db("shop", $con);
 
 // just a handy validator 
 function isvalidean13($input){
-	preg_match('/\d{4}/', $input, $matches);
+	preg_match('/\d{13}/', $input, $matches);
 	$check = $matches[0];
 	if ($check == $input) return true;
 	}
 	
 
 function EanToCash($input){
-	$amount = substr($input, 2, 2);
+	$amount = substr($input, 0, strlen($input)-1);
 	return $input; 
 }
 
