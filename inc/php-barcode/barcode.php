@@ -120,5 +120,34 @@ if (!$code) $code='123456789012';
 	<td/>
 </tr>
 </table>
+
+
+<h1>Donation Amount</h1>
+<table valign="center" width="100%">
+<tr>
+	<td width="25%">
+		<?php barcode_print("102000000050","EAN","2","html"); ?>
+	<td/>
+	<td width="25%"><h2>50 Cent</h2>
+	<td/>
+	<td width="25%">
+		<?php barcode_print("102000000100","EAN","2","html"); ?>
+	<td/>
+	<td width="25%"><h2>1 Euro</h2>
+	<td/>
+</tr>
+<tr>
+	<td>
+		<?php barcode_print("102000000200","EAN","2","html"); ?>
+	<td/>
+	<td><h2>2 Euro</h2>
+	<td/>
+	<td>
+		<?php barcode_print("102000000500","EAN","2","html"); ?>
+	<td/>
+	<td><h2>5 Euro</h2>
+	<td/>
+</tr>
+</table>
 </body>
 </html>
