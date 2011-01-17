@@ -1,6 +1,5 @@
 <?php
 session_start();
-require ('./inc/settings.php');
 require ('./inc/connect.php');
 
 // hackerspace-soft, so let's sanitize the imput a bit :-)
