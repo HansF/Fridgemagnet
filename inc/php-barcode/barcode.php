@@ -40,7 +40,7 @@ if (get_magic_quotes_gpc()){
 }
 if (!$code) $code='123456789012';
 
-barcode_print($code,getvar('encoding'),getvar('scale'),getvar('mode'));
+barcode_print(getvar('code'),getvar('encoding'),getvar('scale'),getvar('mode'));
 
 /*
  * call
