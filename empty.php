@@ -1,19 +1,5 @@
 <?php
 session_start();
-/*
-
-	geld in kas : 
-	SELECT sum(`amount`) FROM `transactions` WHERE `amount` > 0 AND `date` > '2010-01-02 17:34:56'
-
-	Laatste ophaling: 
-	SELECT time FROM `withdraw` WHERE 1 order by id desc LIMIT  0,1
-
-	update:
-	$sql = "INSERT INTO `shop`.`withdraw` (`id`, `time`) VALUES (NULL, CURRENT_TIMESTAMP);";
-
-	*/
-
-
 
 if ($_POST['formnr']==4) header("Location: ./select.php");
 /*
@@ -46,14 +32,12 @@ if (!isset($_POST['formnr'])){
 								$sql = "SELECT time FROM `withdraw` ORDER by time DESC LIMIT 0,1";								
 								$result = mysql_query($sql);
 								$lastempty = mysql_result($result, 0);
-								$sql ="SELECT sum(`amount`) FROM `transactions` WHERE `amount` > 0 AND `date` > '".$lastempty."'";						
+								$sql ="SELECT sum(`amount`) FROM `transactions` WHERE `amount` > 0 AND `date` > '$lastempty'";						
 								$result = mysql_query($sql);
 								$cash = mysql_result($result, 0);
-								echo "<p>Money in the bank : ". $cash ."</p>";
+								echo "<p>Money in the bank :  $cash .</p>";
 								echo "<p>To Empty the cash, swipe the empty-code again.</p>";
-								echo "<p>To go home, scan the reset code.</p>";
-								
-								
+								echo "<p>To go home, scan the reset code.</p>";								
 								}
 if ($_POST['formnr']==1){
 								if ($input['command']!="empty") die("Wtf!?");
@@ -76,19 +60,16 @@ if ($_POST['formnr']==2){
 <?php
 require ('./inc/footer.php');
 
-
 function insertDepositToDb ($donor,$amount,$validator){
 	global $db;
 	$donorid 		= EanToUser($donor);
 	$validatorid 	= EanToUser($validator);
-	$sql = "INSERT INTO `shop`.`transactions` (`id`, `amount`, `user`, `date`) VALUES (NULL, '".$amount."', '".$donorid."', CURRENT_TIMESTAMP)";
+	$sql = "INSERT INTO `shop`.`transactions` (`id`, `amount`, `user`, `date`) VALUES (NULL, '$amount', '$donorid', CURRENT_TIMESTAMP)";
 	//echo $sql;
 	$result = mysql_query($sql);
 	$lastId = mysql_insert_id();
-	$sql = "INSERT INTO `shop`.`deposit` (`id`, `deposit_by`, `checked_by`, `transaction_id`) VALUES (NULL, '".$donorid."', '".$validatorid."', '".$lastId."');";
+	$sql = "INSERT INTO `shop`.`deposit` (`id`, `deposit_by`, `checked_by`, `transaction_id`) VALUES (NULL, '$donorid', '$validatorid', '$lastId');";
 	$result = mysql_query($sql);
-	
-
 }
 
 

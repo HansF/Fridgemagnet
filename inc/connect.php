@@ -1,10 +1,11 @@
 <?php 
-$con = mysql_connect("localhost","root","");
+require_once('settings.php');
+$con = mysql_connect($dbhost,$dbuname,$dbpasswd);
 if (!$con)
   {
   die('Could not connect: ' . mysql_error());
   }
-$db = mysql_select_db("shop", $con);
+$db = mysql_select_db($dbname, $con);
 
 // just a handy validator 
 function isvalidean13($input){
