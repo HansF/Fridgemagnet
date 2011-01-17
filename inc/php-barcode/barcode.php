@@ -40,7 +40,8 @@ if (get_magic_quotes_gpc()){
 }
 if (!$code) $code='123456789012';
 
-barcode_print(getvar('code'),getvar('encoding'),getvar('scale'),getvar('mode'));
+//barcode_print(getvar('code'),getvar('encoding'),getvar('scale'),getvar('mode'));
+
 
 /*
  * call
@@ -51,3 +52,73 @@ barcode_print(getvar('code'),getvar('encoding'),getvar('scale'),getvar('mode'));
  */
 
 ?>
+<html>
+<body>
+<h1>Action Codes</h1>
+<table valign="center" width="100%">
+	<tr>
+		<td width="25%">
+			<?php barcode_print("000000012345","EAN","2","html"); ?>
+		<td/>
+		<td width="25%"><h2>RESET</h2>
+		<td/>
+		<td width="25%">
+			<?php barcode_print("000000012346","EAN","2","html"); ?>
+		<td/>
+		<td width="25%"><h2>Make Deposit</h2>
+		<td/>
+	</tr>
+</table>
+<h1>Deposit Amounts</h1>
+<table valign="center" width="100%">
+<tr>
+	<td width="25%">
+		<?php barcode_print("000000000005","EAN","2","html"); ?>
+	<td/>
+	<td width="25%"><h2>5 Euro</h2>
+	<td/>
+	<td width="25%">
+		<?php barcode_print("000000000025","EAN","2","html"); ?>
+	<td/>
+	<td width="25%"><h2>25 Euro</h2>
+	<td/>
+</tr>
+<tr>
+	<td>
+		<?php barcode_print("000000000010","EAN","2","html"); ?>
+	<td/>
+	<td><h2>10 Euro</h2>
+	<td/>
+	<td>
+		<?php barcode_print("000000000030","EAN","2","html"); ?>
+	<td/>
+	<td><h2>30 Euro</h2>
+	<td/>
+</tr>
+<tr>
+	<td>
+		<?php barcode_print("000000000015","EAN","2","html"); ?>
+	<td/>
+	<td><h2>15 Euro</h2>
+	<td/>
+	<td>
+		<?php barcode_print("000000000040","EAN","2","html"); ?>
+	<td/>
+	<td><h2>40 Euro</h2>
+	<td/>
+</tr>
+<tr>
+	<td>
+		<?php barcode_print("000000000020","EAN","2","html"); ?>
+	<td/>
+	<td><h2>20 Euro</h2>
+	<td/>
+	<td>
+		<?php barcode_print("000000000050","EAN","2","html"); ?>
+	<td/>
+	<td><h2>50 Euro</h2>
+	<td/>
+</tr>
+</table>
+</body>
+</html>
