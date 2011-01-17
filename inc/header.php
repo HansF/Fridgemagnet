@@ -5,11 +5,10 @@
 <link rel="stylesheet" type="text/css" href="./css/960.css" />
 <script type="text/javascript" src="./js/jquery-1.4.4.min.js"></script>
 
-<script type="text/javascript">
+// <script type="text/javascript">
     $(document).ready(function(){
         //  Focus auto-focus fields
         $('.auto-focus').focus();
-        
     });
 </script>
 

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 11, 2011 at 04:11 
+-- Generation Time: Jan 17, 2011 at 03:36 
 -- Server version: 5.1.41
 -- PHP Version: 5.3.1
 
@@ -23,7 +23,8 @@ CREATE TABLE IF NOT EXISTS `actioncodes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `action` varchar(250) NOT NULL,
   `ean` varchar(13) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `ean` (`ean`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
@@ -31,8 +32,8 @@ CREATE TABLE IF NOT EXISTS `actioncodes` (
 --
 
 INSERT INTO `actioncodes` (`id`, `action`, `ean`) VALUES
-(1, 'delete', '1000'),
-(2, 'deposit', '1001'),
+(1, 'delete', '000000012345'),
+(2, 'deposit', '000000012346'),
 (3, 'empty', '1002');
 
 -- --------------------------------------------------------
@@ -47,21 +48,12 @@ CREATE TABLE IF NOT EXISTS `deposit` (
   `checked_by` varchar(40) NOT NULL,
   `transaction_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `deposit`
 --
 
-INSERT INTO `deposit` (`id`, `deposit_by`, `checked_by`, `transaction_id`) VALUES
-(1, '1', '2', 1),
-(2, '1', '1', 3),
-(3, '1', '1', 4),
-(4, '1', '1', 5),
-(5, '', '', 6),
-(6, '1', '1', 7),
-(7, '1', '2', 9),
-(8, '2', '1', 10);
 
 -- --------------------------------------------------------
 
@@ -74,7 +66,8 @@ CREATE TABLE IF NOT EXISTS `products` (
   `name` varchar(11) NOT NULL,
   `price` float NOT NULL,
   `ean` varchar(40) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `ean` (`ean`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
@@ -99,24 +92,12 @@ CREATE TABLE IF NOT EXISTS `transactions` (
   `user` int(11) NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `transactions`
 --
 
-INSERT INTO `transactions` (`id`, `amount`, `user`, `date`) VALUES
-(1, 10, 1, '2011-01-11 15:55:19'),
-(2, -3, 1, '2011-01-11 15:55:40'),
-(3, 10, 1, '2011-01-11 15:58:57'),
-(4, 10, 1, '2011-01-11 15:59:12'),
-(5, 10, 1, '2011-01-11 16:00:30'),
-(6, 0, 0, '2011-01-11 16:00:59'),
-(7, 20, 1, '2011-01-11 16:01:12'),
-(8, -7, 1, '2011-01-11 16:04:37'),
-(9, 10, 1, '2011-01-11 16:04:51'),
-(10, 10, 2, '2011-01-11 16:05:27'),
-(11, -1.5, 2, '2011-01-11 16:06:00');
 
 -- --------------------------------------------------------
 
@@ -128,7 +109,8 @@ CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(75) NOT NULL,
   `ean` varchar(40) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `ean` (`ean`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
@@ -149,14 +131,11 @@ CREATE TABLE IF NOT EXISTS `withdraw` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `withdraw`
 --
 
 INSERT INTO `withdraw` (`id`, `time`) VALUES
-(1, '2010-01-02 17:34:56'),
-(2, '2011-01-02 17:39:47'),
-(3, '2011-01-02 17:40:03'),
-(4, '2011-01-11 16:10:21');
+(1, '2011-01-17 03:35:08');
