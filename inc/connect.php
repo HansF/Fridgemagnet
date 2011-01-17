@@ -4,10 +4,7 @@ if (!$con)
   {
   die('Could not connect: ' . mysql_error());
   }
-
 $db = mysql_select_db("shop", $con);
-
-
 
 // just a handy validator 
 function isvalidean13($input){
@@ -16,12 +13,10 @@ function isvalidean13($input){
 	if ($check == $input) return true;
 	}
 	
-
 function EanToCash($input){
 	$amount = substr($input, 0, strlen($input)-1);
 	return $input; 
 }
-
 
 function EanToUser($input){
 		$sql = "SELECT * FROM `users` WHERE ean='".$input."' LIMIT 0, 1 ";
@@ -59,7 +54,7 @@ function inputswitch($input){
 	preg_match('/\d{4}/', $input, $matches);
 	$input = $matches[0];
 	// check if its a product 
-		$sql = "SELECT * FROM `products` WHERE ean='".$input."' LIMIT 0, 1 ";
+		$sql = "SELECT * FROM `products` WHERE ean='$input' LIMIT 0, 1 ";
 		$result = mysql_query($sql);
 		if (mysql_num_rows ($result) == 1){
 					$output['ean']=$input; 
@@ -68,7 +63,7 @@ function inputswitch($input){
 					}
 					
 	// check it its a user
-		$sql = "SELECT * FROM `users` WHERE ean='".$input."' LIMIT 0, 1 ";
+		$sql = "SELECT * FROM `users` WHERE ean='$input' LIMIT 0, 1 ";
 		$result = mysql_query($sql);
 		if (mysql_num_rows ($result) == 1){
 					$row = mysql_fetch_assoc($result);
@@ -78,7 +73,7 @@ function inputswitch($input){
 					}
 
 	// check if its a command
-		$sql = "SELECT action FROM `actioncodes` WHERE ean='".$input."' LIMIT 0, 1 ";
+		$sql = "SELECT action FROM `actioncodes` WHERE ean='$input' LIMIT 0, 1 ";
 		$result = mysql_query($sql);
 		if (mysql_num_rows ($result) == 1){
 					$row = mysql_fetch_assoc($result);
