@@ -3,6 +3,7 @@
 <head>
 <title>0x20 Cash Register</title>
 <link rel="stylesheet" type="text/css" href="./css/960.css" />
+<link rel="stylesheet" type="text/css" href="./css/custom.css" />
 <script type="text/javascript" src="./js/jquery-1.4.4.min.js"></script>
 
 <script type="text/javascript">
@@ -31,7 +32,7 @@
 
 <div id="content" class="container_12">
 
-<div id="" class="grid_1 ">
+<div id="" class="grid_1 ">&nbsp;&nbsp;
 </div>
 
 <div id="Content" class="grid_10 ">

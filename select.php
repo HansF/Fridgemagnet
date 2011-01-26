@@ -56,7 +56,7 @@ function addToCart($ean){
 function printcart(){
 	$basket = unserialize ($_SESSION['basket']);
 	$total = 0; 
-	$output = "<ul>";
+	$output = "<div class='container_12'><div class='grid_5'><ul>";
 	while($item = array_shift($basket)){
 		$sql = "SELECT * FROM `products` WHERE ean='".$item."' LIMIT 0, 1 ";
 		$result = mysql_query($sql);
@@ -65,8 +65,8 @@ function printcart(){
 		$_SESSION['total']=$total;
 		$output .="<li>".$row['name']." - ".$row['price']." Euro</li>"; 
 	}
-	$output .= "</ul>";
-	$output .= "<p>Total: ".$total."</p>";
+	$output .= "</ul></div>";
+	$output .= "<div class='grid_5'><p>Total: ".$total."</p></div></div>	";
 	$output .= "<p>Swipe member card to pay.</p>";
 	return $output; 
 
