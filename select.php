@@ -72,6 +72,16 @@ function printcart(){
 
 }
 
+function ShowMeTheMoney($amount){
+	
+
+
+
+
+
+
+
+}
 
 require ('./inc/footer.php');
 ?>
